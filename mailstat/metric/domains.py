@@ -18,29 +18,35 @@ Analyzes the domains of the mail data
 ##########################################################################
 
 from mailstat.reader import EMAIL
+from mailstat.metric import Metric
 from collections import defaultdict
 
 ##########################################################################
 ## Domain Analysis
 ##########################################################################
 
-class DomainDistribution(object):
+class DomainDistribution(Metric):
     """
-    Statistical Distribution of Domain Names
+    Statistical distribution of email domains
     """
 
-    def __init__(self, dataset):
-        self.dataset = dataset
+    name = "Domain Distribution"
 
-    def analyze(self):
+    def preprocess(self):
         """
-        Performs the analysis of the email domains
+        Instantiate the data store for domain counting
         """
-        result = defaultdict(int)
-        for row in self.dataset:
-            domain = row[EMAIL].split('@')[1]
-            result[domain] += 1
-        return result
+        self.data = defaultdict(int)
+
+    def process(self, row):
+        """
+        Increments the frequency distribution for email domains
+        """
+        domain = row[EMAIL].split('@')[1]
+        self.data[domain] += 1
+
+    def get_value(self):
+        return self.data
 
 if __name__ == '__main__':
 
