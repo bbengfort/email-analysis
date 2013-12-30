@@ -52,7 +52,6 @@ class TestDataGeneratorTests(unittest.TestCase):
         self.domains_fixture = os.path.join(tdir, "fixtures/domains.txt")
         self.orig_fixture    = os.path.join(tdir, "../fixtures/emailmetrics.csv")
         self.outpath = tempfile.mkstemp(suffix=".csv", prefix="email-")[1]
-        print self.outpath
 
     def tearDown(self):
         if os.path.exists(self.outpath):

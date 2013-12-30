@@ -34,3 +34,9 @@ class ConsoleError(MailstatException):
     Something went wrong during the execution from the command line
     """
     pass
+
+class ImproperlyConfigured(MailstatException):
+    """
+    Some configuration detail is missing
+    """
+    pass
