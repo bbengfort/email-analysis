@@ -1,0 +1,29 @@
+#!/usr/bin/env python
+# analyze
+# The main script and entry point to the mailstat package
+#
+# Author:   Benjamin Bengfort <benjamin@bengfort.com>
+# Created:  Sun Dec 29 15:53:24 2013 -0600
+#
+# Copyright (C) 2013 Bengfort.com
+# For license information, see LICENSE.txt
+#
+# ID: analyze.py [] benjamin@bengfort.com $
+
+"""
+The main script and entry point to the mailstat package
+"""
+
+##########################################################################
+## Imports
+##########################################################################
+
+import baker
+from mailstat.console import *
+
+##########################################################################
+## Main method and functionality
+##########################################################################
+
+if __name__ == '__main__':
+    baker.run()

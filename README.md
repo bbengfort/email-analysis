@@ -8,7 +8,7 @@ My company recently gave me the oppertunity to use [MineMyMail][minemymail] to p
 ## Usage ##
 
 This package expects a CSV output from MineMyMail, you can find an example in the `fixtures` directory. The ordered fields for this CSV file are as follows:
-    
+
 * Email Address
 * Display Name
 * First Name
@@ -23,12 +23,12 @@ This package expects a CSV output from MineMyMail, you can find an example in th
 * Last Seen
 
 Once you have obtained this file, simply run the Python script in the `bin` directory as follows:
-    
-    $ bin/analyze.py --output=report.html emails.csv
+
+    $ bin/m3stat analyze --output=report.html emails.csv
 
 The output option is the path to where to write the HTML report (by default it will write it to the current working directory with the current timestamp). The only argument is the path to the CSV. To get more options and usage run:
-    
-    $ bin/analyze.py --help
+
+    $ bin/m3stat --help
 
 Note, it is highly recommended that you create a virtual environment using `virtualenv` and install the requirements found in the requirements.txt file before executing this script. If any requirements are not met, an `ImportError` will be raised by the script.
 
