@@ -36,3 +36,4 @@ nosetests.xml
 
 # Private fixtures
 fixtures/private-*
+fixtures/emailmetrics.csv
