@@ -47,15 +47,3 @@ class DomainDistribution(Metric):
 
     def get_value(self):
         return self.data
-
-if __name__ == '__main__':
-
-    from mailstat.reader import *
-    from operator import itemgetter
-
-    distro = DomainDistribution(M3Reader("fixtures/private-emailmetrics.csv"))
-    result = distro.analyze()
-    result = sorted(result.items(), key=itemgetter(1))
-
-    for item in result:
-        print "%s: %i" % item
